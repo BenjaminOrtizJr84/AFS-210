@@ -25,7 +25,6 @@ lName = input("Please enter the Employee's Last Name: ")
 hPay = float(input("Please enter the Employee's Hourly Rate: "))
 totalHours = float(input("How many hours did " + fName + " work this week: "))
 
-print( fName + "'s " + "paycheck amount is ${:,.2f}".format(totalHours))
+newEmployee = Employee(firstName=fName, lastName=lName, hourlyPay=hPay, employeeId=eId)
 
-newEmployee = Employee(eId, fName, lName, hPay)
-print(newEmployee.pay(totalHours))
+print( fName + "'s " + "paycheck amount is ${:,.2f}".format(newEmployee.pay(totalHours)))
