@@ -7,22 +7,25 @@ class Employee:
     self.employeeId = employeeId
 
   def pay(self, totalHours):
-    eId = int(input("Please enter the Employee's ID: "))
-    fName = input("Please enter the Employee's First Name: ")
-    lName = input("Please enter the Employee's Last Name: ")
-    hPay = float(input("Please enter the Employee's Hourly Rate: "))
-    totalHours = float(input("How many hours did " + fName + " work this week: "))
     if totalHours <= 40:
-      newTotal = hPay * 40
-      print(fName + " " + lName + "'s" + " paycheck amount is " + "$" + str(newTotal))
+      newTotal = self.hourlyPay * 40
     elif totalHours > 40:
-      regPay = hPay * 40
+      regPay = self.hourlyPay * 40
       otHours = totalHours - 40
-      otPay = hPay * 1.5
-      newOtTotal = regPay + (otHours * otPay)
-      print(fName + " " + lName + "'s" + " paycheck amount is " + "$" + str(newOtTotal))
+      otPay = self.hourlyPay * 1.5
+      newTotal = regPay + (otHours * otPay)
     else:
-      print("Error: Data entry error for employee ID: " + eId)
+      newTotal = 0
+      print("Error: Data entry error for employee ID: " + self.employeeId)
+    return newTotal
+      
+eId = int(input("Please enter the Employee's ID: "))
+fName = input("Please enter the Employee's First Name: ")
+lName = input("Please enter the Employee's Last Name: ")
+hPay = float(input("Please enter the Employee's Hourly Rate: "))
+totalHours = float(input("How many hours did " + fName + " work this week: "))
 
-newEmployee = Employee("", "", 0.0, 0)
-print(newEmployee.pay(""))
+print( fName + "'s " + "paycheck amount is ${:,.2f}".format(totalHours))
+
+newEmployee = Employee(eId, fName, lName, hPay)
+print(newEmployee.pay(totalHours))
