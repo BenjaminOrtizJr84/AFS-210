@@ -8,7 +8,7 @@ print(Data1[3])
 print(Data1.count(7))
 
 # Data2 (Set)
-Data2 = {"July", 4, 8, "Tango", 4.3, "Bingo"}       # correct the syntax for defining a set, originally had a list inside of tuple.
+Data2 = {"July", 4, 8, "Tango", 4.3, "Bingo"}       # corrected the syntax for defining a set, originally had a list inside of tuple.
 
 Data2.pop()
 Data2.add("Alpha")
