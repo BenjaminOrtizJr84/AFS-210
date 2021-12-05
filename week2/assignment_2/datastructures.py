@@ -8,7 +8,7 @@ print(Data1[3])
 print(Data1.count(7))
 
 # Data2 (Set)
-Data2 = set(["July", 4, 8, "Tango", 4.3, "Bingo"])
+Data2 = {"July", 4, 8, "Tango", 4.3, "Bingo"}       # correct the syntax for defining a set, originally had a list inside of tuple.
 
 Data2.pop()
 Data2.add("Alpha")
@@ -20,7 +20,7 @@ Data3 = ["A", 7, -1, 3.14, True, 7]
 Data3.reverse()
 print(Data3)
 Data3[1] = "B"
-Data3.remove("A")
+Data3.pop()      # corrected by replacing remove("A") and using the pop() method which removes the last item in list if no index position is specified.
 print(Data3)
 
 # Data4 (Dictionary)
