@@ -17,13 +17,26 @@ def loop2():
         i += 1
     return even_sum
 
-# def loop1Rec(num,odd_sum):
-#     # Duplicate the loop1 function using recursion
+def loop1Rec(num,odd_sum):
+    odd_sum = 0
+    if num == 20:
+        return odd_sum
+    else:
+        if (num % 2) == 1:
+            return loop1Rec((num + 1) + odd_sum)
+    
    
-   
-   
-# def loop2Rec(num,even_sum):
-#     # Duplicate the loop2 function using recursion
+def loop2Rec(num,even_sum):
+    num = 0
+    even_sum = 0
+    if (num==20):
+        return even_sum
+    else:
+        if (num % 2) == 0:
+            return loop2Rec((num + 1) + (even_sum + num))
+
 
 print(loop1())
 print(loop2())
+print(loop1Rec())
+print(loop2Rec())
