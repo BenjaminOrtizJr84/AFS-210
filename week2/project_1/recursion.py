@@ -1,3 +1,4 @@
+# Week 2 Project 1: Recursion
 
 def loop1():
     # Sum the odd numbers between 1 and 20
@@ -25,7 +26,6 @@ def loop2():
         i += 1
     return even_sum
     
-   
 def loop2Rec(num,even_sum):
     if (num==20):
         return even_sum
@@ -34,7 +34,6 @@ def loop2Rec(num,even_sum):
             even_sum += num
         num += 1
     return loop2Rec((num + 1), even_sum)
-
 
 print("Sum of odds between 1 and 20 using 'for' loop = " + str(loop1()))
 print("Sum of odds between 1 and 20 using recursion = " + str(loop1Rec(0,0)))
