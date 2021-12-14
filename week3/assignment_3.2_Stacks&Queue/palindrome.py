@@ -1,55 +1,70 @@
 class Stack:
-    def _init_(self):
+    def __init__(self):
         self.items = []
         self.size = 0
         
-def push(self, data):
-    self.items.append(data)
-    
-def pop(self):
-    return self.items.pop()
+    def push(self, data):
+        self.items.append(data)
+        
+    def pop(self):
+        return self.items.pop()
 
-def size(self):
-    return self.size
+    def size(self):
+        return len(self.items)
 
-def is_Empty(self):
-    return self.items == 0
+    def is_Empty(self):
+        return self.items == []
 
-def peek(self):
-    if not self.is_empty():
-        return self.items[-1]
-
-push("e")
-pop()
-is_Empty()
-peek()
+    def peek(self):
+        if not self.is_Empty():
+            return self.items[-1]
 
 class Queue:
-    def _init_(self):
+    def __init__(self):
         self.items = []
         self.size = 0
 
-def enqueue(self, data):
-    self.items.insert(0, data)
-    self.size += 1
+    def enqueue(self, data):
+        self.items.insert(0, data)
+        self.size += 1
+        
+    def dequeue(self):
+        data = self.items.pop()
+        self.size -= 1
+        return data
+
+    def size(self):
+        return len(self.items)
     
-def dequeue(self):
-    data = self.items.pop()
-    self.size -= 1
-    return data
+    def is_Empty(self):
+        return self.items == []
 
-def size(self):
-    return self.size
+    def peek(self):
+        if not self.is_Empty():
+            return self.items[-1]
+        
+newStack = Stack()
+        
+newStack.push("r")
+newStack.push("a")
+newStack.push("c")
+newStack.push("e")
+newStack.push("c")
+newStack.push("a")
+newStack.push("r")
+print(newStack.pop())
+print(newStack.is_Empty())
+print(newStack.peek())
 
-def is_Empty(self):
-    return self.items == 0
+newQueue = Queue()
 
-def peek(self):
-    if not self.is_empty():
-        return self.items[-1]
-
-enqueue("e")
-Queue.size()
-Queue.dequeue()
-Queue.is_Empty()
-Queue.peek()
+newQueue.enqueue("m")
+newQueue.enqueue("a")
+newQueue.enqueue("d")
+newQueue.enqueue("a")
+newQueue.enqueue("m")
+newQueue.dequeue()
+# newQueue.size()
+print(newQueue.dequeue())
+print(newQueue.is_Empty())
+print(newQueue.peek())
