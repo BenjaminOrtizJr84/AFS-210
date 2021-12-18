@@ -1,7 +1,6 @@
 class Stack:
     def __init__(self):
         self.items = []
-        self.size = 0
         
     def push(self, data):
         self.items.append(data)
@@ -22,15 +21,12 @@ class Stack:
 class Queue:
     def __init__(self):
         self.items = []
-        self.size = 0
 
     def enqueue(self, data):
         self.items.insert(0, data)
-        self.size += 1
-        
+             
     def dequeue(self):
         data = self.items.pop()
-        self.size -= 1
         return data
 
     def size(self):
@@ -64,7 +60,7 @@ newQueue.enqueue("d")
 newQueue.enqueue("a")
 newQueue.enqueue("m")
 newQueue.dequeue()
-# newQueue.size()
+newQueue.size()
 print(newQueue.dequeue())
 print(newQueue.is_Empty())
 print(newQueue.peek())
