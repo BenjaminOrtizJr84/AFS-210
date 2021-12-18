@@ -45,8 +45,8 @@ class DoublyLinkedList:
             self.tail = node
             self.head = node
         else:
-            node.next = self.tail
-            self.tail.prev = node
+            self.tail.prev = node.prev
+            self.tail.next = node
             self.tail = node
 
     def addAtIndex(self, data, index):
@@ -68,23 +68,20 @@ class DoublyLinkedList:
 
     def indexOf(self, data):
         # Search through the list. Return the index position if data is found, otherwise return -1    
-        node = Node(data)
-        for data in self.data:
-            if self.data == node.data:
-                return True
-            return False
-
+       pos = 0
+       current = self.head
+       while current:
+           if current.data == data:
+               return pos
+           else:
+               current = current.next
+               pos += 1
+       return -1
 
     def add(self, data) -> None:
         # Append an item to the end of the list
-        data = (["May", "the", "Force", "be", "with", "you", "!"])
-        node = Node(data)
-        if (self.tail == None):
-            self.tail = node
-            self.head = node
-        else:
-            self.addLast(data)
-        print(data)
+        self.addLast(data)
+        
 
     def clear(self) -> None:
         # Remove all of the items from the list
@@ -161,5 +158,16 @@ class DoublyLinkedList:
         return myStr
 
 
+newList = DoublyLinkedList()
+newList.addFirst("May")
+newList.addLast("the")
+newList.addLast("force")
+newList.addLast("be")
+newList.addLast("with")
+newList.addLast("you")
+newList.addLast("!")
 
+newList.indexOf("with")
+newList.addAtIndex("us", 5)
 
+print(newList)
