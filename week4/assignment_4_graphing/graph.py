@@ -1,6 +1,26 @@
 
 graph = {
+'A' : ['B', 'C', 'F'],
+'B' : ['C', 'E'],
+'C' : ['D'],
+'D' : ['E'],
+'E' : ['F'],
+'F' : ['G', 'H'],
+'G' : ['H', 'F'],
+'H' : ['G', 'F'],
+'I' : []
+}
 
+graph2 = {
+'A' : {'B':2, 'C':1, "F":20},
+'B' : {'C':4, 'E':3},
+'C' : {'D':8},
+'D' : {'E':7},
+'E' : {'F':5},
+'F' : {'G':2, 'H':2},
+'G' : {'H':6, 'F':1},
+'H' : {'G':8, 'F':9},
+'I' : {}
 }
 
 
@@ -77,3 +97,5 @@ def dijsktra(graph, initial, end):
     path = path[::-1]
     return path
 
+print(breadth_first_search(graph, 'A', 'H'))
+print(dijsktra(graph2, 'A', 'H'))
