@@ -1,6 +1,6 @@
 def mergeSort(nlist):
     print("Splitting ",nlist)
-    # insert your code to complete the mergeSort function
+    # insert your code to complete the mergeSort function /
     print("Merging ",nlist)
 
 def merge(nlist,lefthalf,righthalf):
