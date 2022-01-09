@@ -13,9 +13,10 @@ def mergeSort(nlist):
         mergeSort(lefthalf)
         mergeSort(righthalf)
         
-        
+    merge(nlist, lefthalf, righthalf)
+  
     print("Merging ",nlist)
-
+    
 def merge(nlist,lefthalf,righthalf):
     i=j=k=0       
     while i < len(lefthalf) and j < len(righthalf):
@@ -41,3 +42,4 @@ def merge(nlist,lefthalf,righthalf):
 myList = [55, 31, 26, 20, 63, 7, 51, 74, 81, 40]
 
 print(mergeSort(myList))
+print("Sorted: ", myList)
